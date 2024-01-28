@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react'
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import PostItem from '../components/PostItem';
+
 
 export default function BlogItem() {
-    let { slug } = useParams();  
-
-    useEffect(() => {
-        console.log(slug);
-        
-    }, [])
+    const [ theme , setTheme ] = useLocalStorage("light");
+    let { slug } = useParams();
 
     return (
-        <div>
-            <button  type="submit">hello</button>
+        <div  data-theme={theme}>
+            <Header /> 
+                <PostItem slug={slug} />
+            <Footer />
         </div>
     )
 }

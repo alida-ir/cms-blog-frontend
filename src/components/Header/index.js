@@ -1,29 +1,64 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
+import useLocalStorage from 'use-local-storage';
+import dark from  '../../image/1.png'
+import light from  '../../image/2.png'
+import iranFlag from "../../image/iranFlag.png"
+import AmericanFlag from "../../image/AmericanFlag.png"
+import './index.css'
+import { changeLanguage } from 'i18next';
+import { Link } from 'react-router-dom';
 
-export default function Header() {
+
+const Header = () => {
+
+    const [ lang , setLang ] = useLocalStorage("lang");
+    const [ theme , setTheme ] = useLocalStorage("light");
+
+    const { t, i18n } = useTranslation();
 
     const MenuButton = () => {
-        document.querySelector(".MenuButton").classList.toggle("disable")
-        document.querySelector(".CloseButton").classList.toggle("active")
+        document.querySelector(".navMobileMenu").classList.toggle("openBox")
+        // document.querySelector(".CloseButton").classList.toggle("active")
         document.querySelector(".navBarMobile").classList.toggle("visible")
     }
+        
+    const changeLanguageHandler = () => {
+        const newLang = lang === "en" ? "fa" : "en" ;
+        setLang(newLang)
+        document.querySelector('.navBarLeftLangFlagEn').classList.toggle("active")
+        document.querySelector('.navBarLeftLangFlagFa').classList.toggle("disable")
+        document.querySelector('body').classList.toggle("ltr")
+        changeLanguage(newLang);
+    }
+
+    const SwitchTheme = () => {
+        const newTheme = theme == "light" ?  "dark" : "light"
+        setTheme(newTheme)
+        document.querySelector(".navThemeDark").classList.toggle("disable")
+        document.querySelector(".navThemeLight").classList.toggle("active")
+    }
+
+    useEffect(() => {
+        changeLanguage(lang)
+        if(lang === "en"){
+            document.querySelector('.navBarLeftLangFlagEn').classList.add("active")
+            document.querySelector('.navBarLeftLangFlagFa').classList.add("disable")
+            document.querySelector('body').classList.add("ltr")
+        }
+        if(theme === "dark"){
+            document.querySelector(".navThemeDark").classList.add("disable")
+            document.querySelector(".navThemeLight").classList.add("active")
+        }
+    } , [])
 
     return (
-        <header>
+        <header data-theme={theme}>
             <div className='navBar'>
                 <div onClick={ MenuButton } className='navMobileMenu'>
-
-                    <svg className='MenuButton' width="24" height="15" viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0H24V2.2H0V0Z" fill="#1D2939"/>
-                        <path d="M0 6.4H24V8.6H0V6.4Z" fill="#1D2939"/>
-                        <path d="M24 12.8H8V15H24V12.8Z" fill="#1D2939"/>
-                    </svg>
-
-                    <svg className='CloseButton' width="34" height="35" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.26367 8.23682L26.2342 25.2074L24.6786 26.763L7.70804 9.79245L9.26367 8.23682Z" fill="#1D2939"/>
-                        <path d="M26.2334 9.79248L9.26283 26.763L7.7072 25.2074L24.6778 8.23685L26.2334 9.79248Z" fill="#1D2939"/>
-                    </svg>
-
+                    <span className="navMobileMenuIconOne"></span>
+                    <span className="navMobileMenuIconTwo"></span>
+                    <span className="navMobileMenuIconTree"></span>
                 </div>
                 <div className='navBarRight'>
                     <div className='navBarSubscribe'>
@@ -32,9 +67,9 @@ export default function Header() {
                     <div className='navBarMenu'>
                         <nav>
                             <ul>
-                                <li><a href='#'>{ t('menuTopFirst') }</a></li>
-                                <li><a href='#'>{ t('menuTopMiddle') }</a></li>
-                                <li><a href='#'>{ t('menuTopLast') }</a></li>
+                                <li><Link to="/">{ t('menuTopFirst') }</Link></li>
+                                <li><Link to="/blog">{ t('menuTopMiddle') }</Link></li>
+                                <li><Link to="/contact">{ t('menuTopLast') }</Link></li>
                             </ul>
                         </nav>
                     </div>
@@ -45,13 +80,9 @@ export default function Header() {
                         <img className='navBarLeftLangFlagFa' src={iranFlag} alt="Fa" />
                         <img className='navBarLeftLangFlagEn' src={AmericanFlag} alt="En" />
                     </div>
-                    {/* <select onChange={changeLanguageHandler} >
-                        <option className='navBarLeftLangEn' value="en" >English</option>
-                        <option className='navBarLeftLangFa' value="fa" >فارسی</option>
-                    </select> */}
                     </div>
                     <div className='navBarLeftTheme'>
-                        <button type='button' onClick={switching}>
+                        <button type='button' onClick={SwitchTheme}>
                             <img className='navThemeDark' src={light} />
                             <img className='navThemeLight' src={dark} />
                         </button>
@@ -63,14 +94,14 @@ export default function Header() {
             </div>
             <div className='navBarMobile'>
                     <div className='navBarMobileSubscribe'>
-                        <a href='#'>رزومه</a>
+                        <a href='#'>{t('resume')}</a>
                     </div>
                     <div className='navBarMobileMenu'>
                         <nav>
                             <ul>
-                                <li><a href='#'>خانه</a></li>
-                                <li><a href='#'>وبلاگ</a></li>
-                                <li><a href='#'>درباره من</a></li>
+                                <li><Link to="/">{ t('menuTopFirst') }</Link></li>
+                                <li><Link to="/blog">{ t('menuTopMiddle') }</Link></li>
+                                <li><Link to="/contact">{ t('menuTopLast') }</Link></li>
                             </ul>
                         </nav>
                     </div>
@@ -78,3 +109,6 @@ export default function Header() {
          </header>
     )
 }
+
+
+export default Header

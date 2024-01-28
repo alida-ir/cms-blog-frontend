@@ -1,0 +1,23 @@
+{
+    "name": "علیرضا داداش زاده",
+    "welcome" : "یک وبلاگ ساده برای به اشتراک گذاری تجربیات" ,
+    "welcomeTitle" : "این سایت صرفا برای وبلاگ و معرفی رزومه طراحی شده است ." ,
+    "copyright": "حقوق کپی رایت | علیرضا داداش زاده" ,
+    "resumeButtonTop" : "رزومه" ,
+    "menuTopFirst" : "خانه" ,
+    "menuTopMiddle" :    "وبلاگ" , 
+    "menuTopLast" :    "تماس با من" ,
+    "SimilarPosts" : "پست های مشابه" ,
+    "blogList" : "لیست وبلاگ" ,
+    "seeAll" : "مشاهده همه" ,
+    "AllPosts" : "تمامی پست ها" ,
+    "captionHomeHeroSection" : "این سایت صرفا برای وبلاگ و معرفی رزومه طراحی شده است",
+    "LastBlogPost" : "آخرین پست های منتشر شده" ,
+    "LastBlog" : "آخرین نوشته ها" ,
+    "nextPagination" : "بعدی" ,
+    "prevPagination" : "قبلی" ,
+    "startPagination" : "اولین" ,
+    "endPagination" : "آخرین" ,
+    "NotFound" : "متاسفانه صفحه مدنظر شما وجود ندارد !" ,
+    "resume" : "رزومه"
+}

@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import useLocalStorage from 'use-local-storage';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import SectionPosts from '../components/SectionPosts';
 
-class Blog extends Component {
-    render() {
-        return (
-            <div>
-                Blog
-            </div>
-        );
-    }
+
+export default function Blog() {
+    const [ theme , setTheme ] = useLocalStorage("light");
+
+    return (
+        <div  data-theme={theme}>
+            <Header />
+                <SectionPosts />
+            <Footer />
+        </div>
+    )
 }
-
-export default Blog;

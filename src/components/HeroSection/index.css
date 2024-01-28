@@ -1,0 +1,46 @@
+section.hero {
+    background-color: var(--background-light);
+    color: var(--background-dark);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: justify;
+    justify-content: center;
+    -webkit-flex-basis: 500px;
+    flex-basis: 500px;
+}
+section.customHeroBlog {
+  flex-basis: 350px;
+}
+section.hero > h1 {
+  background: -webkit-linear-gradient(#C41740, #EA9C28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: bold;
+  font-size: 48px;
+  max-width: 100%;
+  font-weight: 500;
+}
+
+section.hero > p {
+    color: var(--text-dark-hero);
+    font-size: 18px;
+    margin-top: 15px;
+}

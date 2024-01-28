@@ -1,0 +1,132 @@
+section.PostItem {
+    padding: 1rem 12rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: justify;
+    justify-content: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    background-color: var(--background-light);
+}
+.BlogCover > img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 1px 8px -5px var(--background-dark);
+    margin-bottom: 2rem;
+}
+
+section.PostItem > .PostItemBody  > p {
+    color: var(--text-dark);
+    font-size: 18px;
+    padding: 0 10rem;
+    margin: 2rem 0;
+}
+
+section.PostItem > .PostItemBody  > img {
+    width: 82%;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px -5px var(--background-dark);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin: 2rem 0;
+}
+
+section.PostItem > .PostItemBody > bold {
+    font-weight: 600;
+    font-size: 30px;
+    padding: 2rem 2rem;
+    border-right: 5px solid var(--background-dark);
+    color: var(--background-dark);
+}
+
+section.PostItem > .PostItemBody > code {
+    text-align: left;
+    background: var(--background-dark);
+    color: var(--text-light);
+    padding: 1rem;
+    margin: 0 0.3rem;
+}
+
+section > .BoxInfo {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 25px 10px;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+body.ltr .BoxInfo {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+body.ltr .PostItemBody {
+    text-align: left;
+}
+
+section > .BoxInfo > .BoxInfoTitle {
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+section > .BoxInfo > .BoxInfoTime {
+    color: var(--text-dark-section);
+  font-size: 13px;
+}
+
+.mt-1{
+    margin-top: 1rem;
+}
+
+.mt-2{
+    margin-top: 2rem;
+}
+
+.mt-3{
+    margin-top: 3rem;
+}
+
+.mt-4{
+    margin-top: 4rem;
+}
+
+.mt-5{
+    margin-top: 5rem;
+}
+

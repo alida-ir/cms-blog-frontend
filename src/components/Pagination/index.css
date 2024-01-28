@@ -1,0 +1,17 @@
+.pagination > button {
+    padding: 5px;
+    cursor: pointer;
+    margin: 2px;
+    background: var(--text-dark);;
+    color: var(--text-light);
+    border: 1px solid var(--text-dark);
+    border-radius: 3px;
+
+}
+
+.pagination > button.active
+{
+  background: var(--text-light);
+  color: var(--text-dark);
+  border: 1px solid var(--text-dark);
+}

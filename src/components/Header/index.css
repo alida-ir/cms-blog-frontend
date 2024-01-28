@@ -1,0 +1,365 @@
+header {
+    width: 100%;
+    height: 72px;
+    padding:  0 7rem;
+    background-color: var(--background-light);
+    box-shadow: 0 4px 70px -30px var(--background-dark);
+    position: fixed;
+    z-index: 3;
+    position: relative;
+}
+
+#root {
+    transition: all 500ms ease;
+}
+
+header > .navBar {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+body.ltr .navBar , body.ltr  .navBarRight , body.ltr  .navBarLeft , body.ltr .navBarMenu > nav > ul {
+     -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+} 
+body.ltr .navBarLeftTheme {
+    margin-right: 15px;
+}
+
+body.ltr .navBarMobile {
+    -webkit-box-align: flex-end;
+    -moz-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    text-align: left;
+} 
+
+body.ltr .navBarMobile .navBarMobileSubscribe {
+    margin-left: 1rem;
+}
+
+.navBarLeft > .navBarLeftLogo {
+    color: var(--text-dark);
+}
+
+.navBarLeft {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.navBarLeftTheme  {
+    margin-left: 15px;
+}
+.navBarLeftTheme > button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.navBarLeftTheme > button > img {
+    width: 24px;
+}
+
+.navThemeLight{
+    display: none;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(162deg) brightness(103%) contrast(103%);
+}
+.navThemeLight , .navThemeDark {
+    transition: all .5s ease;
+}
+.navThemeLight.active {
+    display: block;
+    transition: all .5s ease;
+}
+.navThemeDark.disable {
+    display: none;
+    transition: all .5s ease;
+}
+
+.navBarMobile {
+    position: absolute;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;    
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    visibility: hidden;
+    width: 100%;
+    height: 0px;
+    background-color: var(--background-light);
+    top: 72px;
+    right: 0;
+    transition: all ease 300ms;
+    padding: 1rem 2rem;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.navBarMobile.visible {
+    visibility: visible;
+    height: 220px;
+    transition: all ease 300ms;
+}
+
+.navBarRight{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.navBarSubscribe {
+    margin-left:  3rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.navBarSubscribe > a {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: .5rem 1rem;
+    font-weight: 800;
+    border-radius: 8px;
+}
+
+.navBarMenu > nav > ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+.navBarMenu > nav > ul > li {
+    margin-left: 15px;
+    transition: all .5s ease;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+}
+
+.navBarMenu > nav > ul > li:hover {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    transition: all .5s ease;
+}
+.navBarMenu > nav > ul > li:hover a {
+    color: var(--text-light);
+    transition: all .5s ease;
+}
+.navBarMenu > nav > ul > li a {
+    transition: all .5s ease;
+}
+
+.navMobileMenu {
+    display: none;
+}
+
+.MenuButton {
+    transition: all ease 500ms;
+}
+
+.CloseButton {
+    display: none;
+    transition: all ease 500ms;
+}
+.MenuButton.light ,
+.CloseButton.light {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(162deg) brightness(103%) contrast(103%);
+}
+
+.CloseButton.active {
+    display: block;
+    transition: all ease 500ms;
+}
+
+.MenuButton.disable {
+    display: none;
+    transition: all ease 500ms;
+}
+
+
+/* Mobile Code Menu  */
+.navBarMobileRight
+{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.navBarMobile .navBarMobileSubscribe {
+    margin-left:  3rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.navBarMobile .navBarMobileSubscribe > a {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: .5rem 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.navBarMobile .navBarMobileMenu > nav > ul  {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.navBarMobile .navBarMobileMenu > nav > ul > li {
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: .5rem 0;
+    border-radius: 8px;
+    background: -webkit-linear-gradient(#C41740, #EA9C28);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all ease 500ms;
+}
+
+.navBarMobile .navBarMobileMenu {
+    margin-bottom: 5px;
+}
+    .navBarMobile .navBarMobileMenu > nav > ul > li:hover {
+    padding-right: 20px;
+    transition: all ease 500ms;
+}
+
+
+
+.navBarLeftLang > select {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    direction: ltr;
+    margin: 0 1rem;
+}
+.navBarLeftLang > select:focus-visible{
+    border: none;
+    outline: 0;
+}
+
+
+.navBarLeftLangFlag{
+    margin: 0 1rem;
+    cursor: pointer;
+}
+/* .navBarLeftLangFlagFa , .navBarLeftLangFlagEn {
+    display: none;
+} */
+.navBarLeftLangFlag > img {
+    width: 24px;
+    height: 24px;
+}
+
+.navBarLeftLangFlagFa.disable {
+    display: none;
+}
+.navBarLeftLangFlagEn{
+    display: none;
+}
+.navBarLeftLangFlagEn.active{
+    display: inline-block;
+}
+
+/* Mobile Menu Icone */
+
+header > .navBar > .navMobileMenu 
+{
+    display: none;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+header > .navBar > .navMobileMenu  > span {
+  width: 24px;
+  height: 3px;
+  margin: 2px;
+  background: var(--background-dark);
+}
+
+header > .navBar > .navMobileMenu.openBox  > span:first-child {
+    transform: rotate(45deg) translate(5px , -5px);
+}
+
+header > .navBar > .navMobileMenu.openBox  > span:nth-child(2){
+    display: none;
+}
+
+header > .navBar > .navMobileMenu.openBox  > span:last-child {
+    transform: rotate(-45deg) translate(10px , 0px);
+}

@@ -1,0 +1,23 @@
+footer {
+    background-color: var(--background-light);
+    height: auto;
+}
+
+footer .copyright {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: justify;
+    justify-content: center;
+}
+
+footer .copyright > a {
+    color: var(--text-dark);
+    font-size: 16px;
+    padding: 2rem 0;
+}

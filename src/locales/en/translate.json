@@ -1,0 +1,23 @@
+{
+    "name": "Alireza Dadashzadeh",
+    "welcome": "A simple blog to share experiences" ,
+    "welcomeTitle" : "This site is designed solely for blogs and resume introductions ." ,
+    "copyright" : "CopyRight 2022 | Alireza Dadashzadeh" ,
+    "resumeButtonTop" : "Resume" ,
+    "menuTopFirst" : "Home" ,
+    "menuTopMiddle" :    "Blog" , 
+    "menuTopLast" :    "Contact Me" ,
+    "SimilarPosts" : "Similar Posts",
+    "blogList" : "Blog List" ,
+    "seeAll" : "See All" ,
+    "AllPosts" : "See All Posts",
+    "captionHomeHeroSection" : "This site is designed for blog and resume presentation only",
+    "LastBlogPost" : "Latest posts published",
+    "LastBlog" : "Latest posts" ,
+    "nextPagination" : "Next" ,
+    "prevPagination" : "Prev" ,
+    "startPagination" : "Start" ,
+    "endPagination" : "End" ,
+    "NotFound" : "Sorry , This page does not exist !",
+    "resume" : "Resume"
+}
